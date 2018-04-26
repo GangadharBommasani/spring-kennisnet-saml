@@ -1,0 +1,10 @@
+spring-boot-security-saml-samples
+spring-security-saml-1.0.4.RELEASE
+
+# Ignore maven files
+target
+
+# Ignore some eclipse files
+.settings
+.classpath
+.project

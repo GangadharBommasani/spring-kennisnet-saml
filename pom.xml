@@ -12,7 +12,7 @@
   
   <properties>
 		<java.version>1.8</java.version>
-		<start-class>com.iddink.security.saml.SamlServiceProviderApplication</start-class>
+		<start-class>com.ganga.security.saml.SamlServiceProviderApplication</start-class>
 	</properties>
 
 	<dependencies>
