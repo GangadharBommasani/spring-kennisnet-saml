@@ -77,7 +77,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable();
         http
                 .csrf()
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());;
+                .disable();
         http
                 .addFilterAfter(metadataGeneratorFilter, BasicAuthenticationFilter.class)
                 .addFilterAfter(metadataDisplayFilter, MetadataGeneratorFilter.class)

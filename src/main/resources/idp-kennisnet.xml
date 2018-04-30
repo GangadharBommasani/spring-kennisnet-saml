@@ -2,7 +2,7 @@
 <md:EntityDescriptor
 	xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
 	ID="aselect.entree.kennisnet.nl" entityID="http://aselect.entree.kennisnet.nl">
-	<!-- <ds:Signature
+<!-- 	<ds:Signature
 		xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 		<ds:SignedInfo>
 			<ds:CanonicalizationMethod
@@ -45,7 +45,7 @@
 				</ds:X509Certificate>
 			</ds:X509Data>
 		</ds:KeyInfo>
-	</ds:Signature> -->
+	</ds:Signature>  -->
 	<md:SPSSODescriptor AuthnRequestsSigned="true"
 		WantAssertionsSigned="true"
 		protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">

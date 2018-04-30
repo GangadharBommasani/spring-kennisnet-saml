@@ -13,6 +13,7 @@ import org.apache.velocity.app.VelocityEngine;
 import org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider;
 import org.opensaml.xml.parse.StaticBasicParserPool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.context.annotation.Bean;
@@ -64,6 +65,9 @@ public class SAMLConfig {
 	
 	@Autowired
     private DefaultSAMLUserDetailsService defaultSAMLUserDetailsService;
+	
+	@Value("${spring.smal.entityId}")
+	private String entityId;
     
 
     @Bean
@@ -185,7 +189,7 @@ public class SAMLConfig {
     @Bean
     public MetadataGenerator metadataGenerator(KeyManager keyManager) {
         MetadataGenerator generator = new MetadataGenerator();
-        generator.setEntityId("aselect.entree.kennisnet.nl");
+        generator.setEntityId("localhost-demo");
         generator.setExtendedMetadata(extendedMetadata());
         generator.setIncludeDiscoveryExtension(false);
         generator.setKeyManager(keyManager);
@@ -198,7 +202,7 @@ public class SAMLConfig {
         filter.setAuthenticationManager(authenticationManager());
         filter.setAuthenticationSuccessHandler(successRedirectHandler());
         filter.setAuthenticationFailureHandler(authenticationFailureHandler());
-        filter.setFilterProcessesUrl("saml/SSO");
+        filter.setFilterProcessesUrl("/saml/SSO");
         return filter;
     }
 
